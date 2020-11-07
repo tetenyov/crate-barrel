@@ -1,8 +1,8 @@
 import React from 'react'
-
-import Footer from '../footer/Footer'
+import { getVasesWithImg } from '../../data/goods'
 
 function home() {
+
   return (
     <section className='home-page'>
       <img className='home-page__promo-image' src='/img/internationalHero_v4.webp' />
@@ -26,7 +26,6 @@ function home() {
           </li>
         </ul>
       </div>
-      <Footer />
     </section>
   )
 }
