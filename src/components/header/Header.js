@@ -4,8 +4,6 @@ import { NavLink } from 'react-router-dom'
 import Search from '../search/Search'
 import Menu from '../menu/Menu'
 
-import './style/page-header.scss'
-
 function Header() {
   return (
     <header className='page-header'>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './style/home-page.scss'
+import Footer from '../footer/Footer'
 
 function home() {
   return (
@@ -26,6 +26,7 @@ function home() {
           </li>
         </ul>
       </div>
+      <Footer />
     </section>
   )
 }

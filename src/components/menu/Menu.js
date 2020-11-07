@@ -1,50 +1,43 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-import './style/navigation.scss'
-
 function Menu() {
   return (
     <nav className='navigation'>
       <ul className='navigation__list'>
         <li className='navigation__item'>
           <NavLink to=''>
-            Furniture
+            Vases
           </NavLink>
         </li>
         <li className='navigation__item'>
           <NavLink to=''>
-            Outdoor
+            Botanicals
           </NavLink>
         </li>
         <li className='navigation__item'>
           <NavLink to=''>
-            Tabletop & Bar
+            Objects
           </NavLink>
         </li>
         <li className='navigation__item'>
           <NavLink to=''>
-            Kitchen
+            Electronics & Tech
           </NavLink>
         </li>
         <li className='navigation__item'>
           <NavLink to=''>
-            Decor
+            Bowls & Trays
           </NavLink>
         </li>
         <li className='navigation__item'>
           <NavLink to=''>
-            Rugs
+            Fireplaces
           </NavLink>
         </li>
         <li className='navigation__item'>
           <NavLink to=''>
-            Lightning
-          </NavLink>
-        </li>
-        <li className='navigation__item'>
-          <NavLink to=''>
-            Bed & Bath
+            Pet accessories
           </NavLink>
         </li>
       </ul>
