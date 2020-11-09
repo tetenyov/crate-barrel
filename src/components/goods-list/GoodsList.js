@@ -1,19 +1,29 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 
-function GoodsList(props) {
-  console.log(props.goods)
+import GoodsItem from './GoodsItem'
+
+function GoodsList() {
+  const goods = useSelector(state => state.goods.goodsList)
+  const goodsList = goods.length && goods.map((item) => {
+    const { name, price, newArrival, img, sku } = item
+    return (
+      <li key={sku}>
+        <GoodsItem 
+          name={name}
+          price={price}
+          newArrival={newArrival}
+          src={img[0]}
+        />
+      </li> 
+    )
+  })
+
   return (
     <ul>
-      
+      { goodsList }
     </ul>
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    goods: state.goods.goodsList
-  }
-}
-
-export default connect(mapStateToProps, null)(GoodsList)
+export default GoodsList

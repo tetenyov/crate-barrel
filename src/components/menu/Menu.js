@@ -1,17 +1,17 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import { loadVases } from '../../store/action-creators/action-creators'
 
-function Menu(props) {
-  const { loadVases } = props
+function Menu() {
+  const dispatch = useDispatch()
   
   return (
     <nav className='navigation'>
       <ul className='navigation__list'>
         <li className='navigation__item'>
-          <NavLink to='/vases' onClick={() => loadVases()}>
+          <NavLink to='/vases' onClick={() => dispatch(loadVases())}>
             Vases
           </NavLink>
         </li>
@@ -50,4 +50,4 @@ function Menu(props) {
   )
 }
 
-export default connect(null, {loadVases})(Menu)
+export default Menu
