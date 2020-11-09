@@ -1,0 +1,1 @@
+export const LOAD_VASES = 'LOAD_VASES';

@@ -1,7 +1,7 @@
 import { ShipStatuses } from '../constants/constants'
 import { getGoodsWithImg } from '../util/util'
 
-export const Vases = [
+export const VasesNoImg = [
   {
     sku: 559546,
     name: 'Ashland Rust and Teal Ceramic Vase with Handle',
@@ -382,9 +382,4 @@ export const Vases = [
   },
 ]
 
-export const getVasesWithImg = (vases) => {
-   return getGoodsWithImg(vases)
-}
-
-console.log(getVasesWithImg(Vases))
-console.log('hello')
+export const vases = getGoodsWithImg(VasesNoImg)
