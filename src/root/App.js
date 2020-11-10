@@ -6,14 +6,17 @@ import vases from '../components/pages/vases'
 import Header from '../components/header/Header'
 import Footer from '../components/footer/Footer'
 
+
 import './page-wrapper.scss'
+import Item from '../components/item/Item'
 
 function App() {
   return (
     <div className='page-wrapper'>
       <Header />
       <Switch>
-        <Route path='/vases' component={vases}/>
+        <Route path='/vases/:sku' component={Item}/>
+        <Route exact path='/vases' component={vases}/>
         <Route exact path='/' component={home}/>
       </Switch>
       <Footer />

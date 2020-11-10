@@ -1,26 +1,23 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import GoodsItem from './GoodsItem'
+import ListItem from './ListItem'
 
 function GoodsList() {
   const goods = useSelector(state => state.goods.goodsList)
   const goodsList = goods.length && goods.map((item) => {
-    const { name, price, newArrival, img, sku } = item
+   
     return (
-      <li key={sku}>
-        <GoodsItem 
-          name={name}
-          price={price}
-          newArrival={newArrival}
-          src={img[0]}
+      <li className='goods-list__item' key={item.sku}>
+        <ListItem 
+          item={item}
         />
       </li> 
     )
   })
 
   return (
-    <ul>
+    <ul className='goods-list'>
       { goodsList }
     </ul>
   )

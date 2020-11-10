@@ -1,4 +1,8 @@
+@import '../styles/variables.scss';
+
 .page-wrapper {
-  max-width: 1400px;
+  width: 100vw;
+  min-width: $width-desktop;
+  max-width: $width-max-desktop;
   margin: 0 auto;
 }
