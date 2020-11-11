@@ -7,10 +7,10 @@ function GoodsList() {
   let goods = useSelector(state => state.goods.goodsList)
   goods = goods.length 
     ? goods
-    : JSON.parse(sessionStorage.getItem('goods'))
-    
+    : JSON.parse(localStorage.getItem('goods'))
+
   useEffect(() => {
-    sessionStorage.setItem('goods', JSON.stringify(goods))
+    localStorage.setItem('goods', JSON.stringify(goods))
   }, [])
 
   const goodsList = goods.length && goods.map((item) => {
