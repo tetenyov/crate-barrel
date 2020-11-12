@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PreviewList(props) {
+function PreviewsList(props) {
   const { images } = props
   const previews = images.length && images.map((src, i) => (
     <li key={i}>
@@ -14,4 +14,4 @@ function PreviewList(props) {
   )
 }
 
-export default PreviewList
+export default PreviewsList
