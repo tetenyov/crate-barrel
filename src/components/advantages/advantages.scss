@@ -3,22 +3,26 @@
   padding: 0;
 }
 
+.advantages-list__item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
 .advantages-list__heading-small {
-  width: 30vw;
-  max-width: 380px;
+  display: block;
+  width: 70%;
+  max-width: 650px;
   min-width: 320px;
   margin: 0;
   margin-bottom: 8px;
   
-  @include font(700, 24px, 30px);
+  @include font(700, 22px, 28px);
 }
 
 .advantages-list__text {
-  width: 40vw;
-  max-width: 420px;
+  width: 70%;
+  max-width: 600px;
   min-width: 350px;
   margin: 0;
-  margin-bottom: 50px;
 
-  @include font(400, 14px, 18px);
+  @include font(400, 12px, 16px);
 }
