@@ -1,0 +1,26 @@
+@import '../../styles/variables.scss';
+
+.current-item {
+  width: $width-current-item;
+  margin: 0 auto;
+  background: gray;
+}
+
+.current-item__wrapper-upper {
+  display: flex;
+  justify-content: space-between;
+  width: $width-current-item;
+  margin: 0 auto;
+  background: gray;
+}
+
+.current-item__heading {
+  margin: 0;
+}
+
+.current-item__exclusive {
+  margin: 0;
+  padding: 0;
+
+  @include font(400, 10px, 12px)
+}

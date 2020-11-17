@@ -1,6 +1,7 @@
 @import './fonts.scss';
 @import './mixins.scss';
 @import './global.scss';
+@import './visually-hidden.scss';
 @import '../components/header/page-header.scss';
 @import '../components/menu/menu.scss';
 @import '../components/pages/styles/home-page.scss';
@@ -8,3 +9,4 @@
 @import '../components/footer/page-footer.scss';
 @import '../components/goods-list/goods-list.scss';
 @import '../components/advantages/advantages.scss';
+@import '../components/item/current-item.scss';
