@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import '../../../styles/variables.scss';
 
 .current-item {
   width: $width-current-item;
@@ -12,6 +12,12 @@
   width: $width-current-item;
   margin: 0 auto;
   background: gray;
+}
+
+.current-item__wrapper-lower {
+  display: flex;
+  justify-content: space-between;
+  
 }
 
 .current-item__heading {

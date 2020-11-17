@@ -1,21 +1,24 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 
 import { DetailsContext } from '../../context/DetailsContext'
 
-import PreviewsList from '../common/PreviewsList'
+import PreviewsList from './PreviewsList'
 import ItemDescription from './ItemDescription'
 
 function Item() {
   const goods = useSelector(state => state.goods.goodsList)
-  const {pathname} = useLocation()
+  const { pathname } = useLocation()
   const skuInPathname = pathname.match(/\d/g).join('')
-
+  
   let currentItem = goods.find(item => item.sku.toString().includes(skuInPathname))
   currentItem = currentItem // после обновления страницы currentItem undefined, поэтому сохраняем в storage и потом делаем такую проверку
-    ? currentItem
-    : JSON.parse(localStorage.getItem('currentItem'))
+  ? currentItem
+  : JSON.parse(localStorage.getItem('currentItem'))
+  
+  const [imageMain, setImageMain] = useState(currentItem.img[0])
+  const getImageMain = (src) => setImageMain(src)
 
   useEffect(() => {
     localStorage.setItem('currentItem', JSON.stringify(currentItem))
@@ -40,8 +43,11 @@ function Item() {
       <div className='current-item__wrapper-lower'>
         <section className='current-item__images'>
           <h4 className='visually-hidden'>Images of the item</h4>
-          <img src={currentItem.img[0]} />
-          <PreviewsList images={currentItem.img}/>
+          <img src={imageMain} />
+          <PreviewsList 
+            getImageMain={getImageMain}
+            images={currentItem.img}
+          />
         </section>
         <section className='current-item__details'>
           <h4 className='visually-hidden'>Details of the item</h4> 
