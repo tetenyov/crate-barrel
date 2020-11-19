@@ -1,9 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
 import cartSVG from '../../icons/Icons.svg'
 
 function Cart() {
+  const cartCounter = useSelector(state => state.cart.counter)
+
   return (
     <div className='page-header__cart-wrapper'>
       <NavLink className='page-header__cart-link' to='' >
@@ -11,7 +14,7 @@ function Cart() {
           <use xlinkHref={`${cartSVG}#icon-cart`} />
         </svg>
       </NavLink>
-      <span>0</span>
+      <span>{cartCounter}</span>
     </div>
   )
 }

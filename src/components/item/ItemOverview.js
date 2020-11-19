@@ -5,7 +5,7 @@ function ItemOverview() {
   const overview = useContext(DetailsContext).overview
 
   return (
-    <p>
+    <p className='current-item__details-overview'>
       { overview }
     </p>
   )

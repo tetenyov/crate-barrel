@@ -8,8 +8,12 @@ export const getGoodsWithImg = (category) => {
       return item
     })
   )
-}
+};
 
-String.prototype.firstLetterCaps = function() {
-  return this[0].toUpperCase() + this.slice(1)
-}
+export const getCounter = (item, array) => {
+  return array.reduce((acc, curr) => {
+    return curr === item ? acc + 1 : acc
+  }, 0)
+};
+
+export const getFirstLetterCaps = (str) => str[0].toUpperCase() + str.slice(1)

@@ -1,0 +1,10 @@
+.dimensions-list {
+  list-style-type: disc;
+}
+
+.dimensions-list__item {
+  margin-bottom: 8px;
+  list-style-type: disc;
+
+  @include font(400, 14px, 14px);
+}

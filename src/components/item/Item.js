@@ -6,9 +6,14 @@ import { DetailsContext } from '../../context/DetailsContext'
 
 import PreviewsList from './PreviewsList'
 import ItemDescription from './ItemDescription'
+import ToCartButton from '../cart/ToCartButton'
 
 function Item() {
-  const goods = useSelector(state => state.goods.goodsList)
+  let goods = useSelector(state => state.goods.goodsList)
+  goods = goods.length // после обновления страницы goods пуст, поэтому такую проверку и если товаров нет, берем их из storage
+    ? goods
+    : JSON.parse(localStorage.getItem('goods'))
+  
   const { pathname } = useLocation()
   const skuInPathname = pathname.match(/\d/g).join('')
   
@@ -16,7 +21,7 @@ function Item() {
   currentItem = currentItem // после обновления страницы currentItem undefined, поэтому сохраняем в storage и потом делаем такую проверку
   ? currentItem
   : JSON.parse(localStorage.getItem('currentItem'))
-  
+
   const [imageMain, setImageMain] = useState(currentItem.img[0])
   const getImageMain = (src) => setImageMain(src)
 
@@ -29,15 +34,21 @@ function Item() {
       <div className='current-item__wrapper-upper'>
         <div className=''>
           <h3 className='current-item__heading'>{ currentItem.name }</h3>
-          { currentItem.exclusive && <p className='current-item__exclusive'>Crate and Barrel Exclusive</p> }
+          { 
+            currentItem.exclusive && 
+              <p className='current-item__exclusive'>Crate and Barrel Exclusive</p> 
+          }
         </div>
         <div className=''>
-          <p>Rub <span>{currentItem.price}</span></p>
-          <p>Sku: <span>{currentItem.sku}</span></p>
-          <p>
-           <span>0</span>
-           <button type='button'>Add to cart</button>
+          <p className='current-item__price'>
+            Rub 
+            <span> { currentItem.price.toLocaleString() }</span>
           </p>
+          <p className='current-item__sku'>
+            Sku: 
+            <span> {currentItem.sku}</span>
+          </p>
+          <ToCartButton sku={currentItem.sku}/>
         </div>
       </div>
       <div className='current-item__wrapper-lower'>
@@ -51,9 +62,9 @@ function Item() {
         </section>
         <section className='current-item__details'>
           <h4 className='visually-hidden'>Details of the item</h4> 
-          <div>
-            <h5>Ship</h5>
-            <p>{currentItem.ship}</p>
+          <div className='current-item__details-wrapper'>
+            <h5 className='current-item__ship-heading'>Ship</h5>
+            <p className='current-item__ship-text'>{currentItem.ship}</p>
           </div>
           <DetailsContext.Provider value={currentItem}>
              <ItemDescription />

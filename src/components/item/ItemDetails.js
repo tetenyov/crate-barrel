@@ -5,13 +5,13 @@ function ItemDetails() {
   const details = useContext(DetailsContext).details
   const detailsList = details.length 
     && details.map((feature, i) => (
-      <li key={i}>
+      <li className='details-list__item' key={i}>
         { feature }
       </li>
     ))
     
   return (
-    <ul>
+    <ul className='details-list'>
       { detailsList }
     </ul>
   )

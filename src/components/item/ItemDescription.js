@@ -18,26 +18,43 @@ function ItemDescription() {
     return sectionToComponent[section]
   }
 
-  const sectionClickHandler = (evt) => setDisplayed(evt.target.textContent)
+  // const getButtonClassName = () => {
+  //   return 
+  // }
 
+  const buttonClickHandler = (evt) => {
+    setDisplayed(evt.target.textContent)
+  } 
 
   return (
     <div>
-      <ul>
+      <ul className='current-item__details-list'>
         <li>
-          <NavLink to='#' onClick={sectionClickHandler}>
-            <h5>Overview</h5>
-          </NavLink>
+          <h5 >
+            <button className='current-item__details-list-button active' type='button'
+              onClick={buttonClickHandler}
+            >
+              Overview
+            </button>
+          </h5>
         </li>
         <li>
-          <NavLink to='#' onClick={sectionClickHandler}>
-            <h5>Details</h5>
-          </NavLink>
+          <h5>
+            <button className='current-item__details-list-button' type='button'
+              onClick={buttonClickHandler}
+            >
+              Details
+            </button>
+          </h5>
         </li>
         <li>
-          <NavLink to='#' onClick={sectionClickHandler}>
-            <h5>Dimensions</h5>
-          </NavLink>  
+          <h5>
+            <button className='current-item__details-list-button' type='button'
+              onClick={buttonClickHandler}
+            >
+              Dimensions
+            </button>
+          </h5>
         </li>
       </ul>
       { displaySection(displayed) }

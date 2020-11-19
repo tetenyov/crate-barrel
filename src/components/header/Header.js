@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 import Search from '../search/Search'
-import Cart from '../common/Cart'
+import CartLink from '../common/CartLink'
 import Menu from '../menu/Menu'
 
 function Header() {
@@ -13,7 +13,7 @@ function Header() {
         <NavLink to='/' className='page-header__logo'>
           <img className='page-header__logo-image' src='/img/crate_and_barrel_logo.jpg' />
         </NavLink>
-        <Cart />
+        <CartLink />
       </div>
       <Menu />
     </header>

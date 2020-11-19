@@ -7,8 +7,8 @@ export const goodsList = (store) => (next) => (action) => {
   if (action.type === LOAD_VASES && !goodsInStore) {
      action.payload = vases
   } else {
-    return next
+    next(action)
   }
 
-  return next(action)
+  return next
 }
