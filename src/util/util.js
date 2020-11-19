@@ -16,4 +16,10 @@ export const getCounter = (item, array) => {
   }, 0)
 };
 
-export const getFirstLetterCaps = (str) => str[0].toUpperCase() + str.slice(1)
+export const getFirstLetterCaps = (str) => str[0].toUpperCase() + str.slice(1);
+
+export const getButtonClassName = (active, current) => {
+  return active === current 
+    ? 'current-item__details-list-button active'
+    : 'current-item__details-list-button'
+;}

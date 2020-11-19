@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
 
 import ItemOverview from './ItemOverview'
 import ItemDetails from './ItemDetails'
 import ItemDimensions from './ItemDimensions'
+import { getButtonClassName } from '../../util/util'
 
 function ItemDescription() {
   const [displayed, setDisplayed] = useState('Overview')
@@ -18,20 +18,14 @@ function ItemDescription() {
     return sectionToComponent[section]
   }
 
-  // const getButtonClassName = () => {
-  //   return 
-  // }
-
-  const buttonClickHandler = (evt) => {
-    setDisplayed(evt.target.textContent)
-  } 
+  const buttonClickHandler = (evt) => setDisplayed(evt.target.textContent)
 
   return (
     <div>
       <ul className='current-item__details-list'>
         <li>
           <h5 >
-            <button className='current-item__details-list-button active' type='button'
+            <button className={ getButtonClassName(displayed, 'Overview') } type='button'
               onClick={buttonClickHandler}
             >
               Overview
@@ -40,7 +34,7 @@ function ItemDescription() {
         </li>
         <li>
           <h5>
-            <button className='current-item__details-list-button' type='button'
+            <button className={ getButtonClassName(displayed, 'Details') } type='button'
               onClick={buttonClickHandler}
             >
               Details
@@ -49,7 +43,7 @@ function ItemDescription() {
         </li>
         <li>
           <h5>
-            <button className='current-item__details-list-button' type='button'
+            <button className={ getButtonClassName(displayed, 'Dimensions') } type='button'
               onClick={buttonClickHandler}
             >
               Dimensions
