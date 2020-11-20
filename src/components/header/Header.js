@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 import Search from '../search/Search'
-import CartLink from '../common/CartLink'
+import CartLink from '../cart/CartLink'
 import Menu from '../menu/Menu'
 
 function Header() {
