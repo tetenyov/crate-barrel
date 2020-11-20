@@ -15,7 +15,6 @@ function Item() {
     : JSON.parse(localStorage.getItem('goods'))
   
   const { pathname } = useLocation()
-  console.log(pathname)
   const skuInPathname = pathname.match(/\d/g).join('')
   
   let currentItem = goods.find(item => item.sku.toString().includes(skuInPathname))
