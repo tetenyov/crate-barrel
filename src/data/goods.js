@@ -4,6 +4,7 @@ import { getGoodsWithImg } from '../util/util'
 export const VasesNoImg = [
   {
     sku: 559546,
+    category: 'vases',
     name: 'Ashland Rust and Teal Ceramic Vase with Handle',
     price: 4211,
     newArrival: true,
@@ -29,6 +30,7 @@ export const VasesNoImg = [
   },
   {
     sku: 560344,
+    category: 'vases',
     name: 'Poe Large Amber Glass Vase',
     price: 4211,
     newArrival: true,
@@ -53,6 +55,7 @@ export const VasesNoImg = [
   },
   {
     sku: 559905,
+    category: 'vases',
     name: 'Leavitt Mini Jug Vase',
     price: 1513,
     newArrival: true,
@@ -78,6 +81,7 @@ export const VasesNoImg = [
   },
   {
     sku: 207415,
+    category: 'vases',
     name: 'Lati Vase',
     price: 3115,
     newArrival: false,
@@ -100,6 +104,7 @@ export const VasesNoImg = [
   },
   {
     sku: 207472,
+    category: 'vases',
     name: 'Taline Vase',
     price: 5054,
     newArrival: false,
@@ -123,6 +128,7 @@ export const VasesNoImg = [
   },
   {
     sku: 560303,
+    category: 'vases',
     name: 'Sundown Metal Vase',
     price: 3367,
     newArrival: true,
@@ -147,6 +153,7 @@ export const VasesNoImg = [
   },
   {
     sku: 198765,
+    category: 'vases',
     name: 'Holden Vase',
     price: 4211,
     newArrival: false,
@@ -169,6 +176,7 @@ export const VasesNoImg = [
   },
   {
     sku: 560275,
+    category: 'vases',
     name: 'Euclid Spotted Large White Vase',
     price: 3367,
     newArrival: true,
@@ -194,6 +202,7 @@ export const VasesNoImg = [
   },
   {
     sku: 565883,
+    category: 'vases',
     name: 'Scoville Small Tan and Blue Vase',
     price: 2524,
     newArrival: true,
@@ -220,6 +229,7 @@ export const VasesNoImg = [
   },
   {
     sku: 527750,
+    category: 'vases',
     name: 'Rati Vase',
     price: 2103,
     newArrival: true,
@@ -241,6 +251,7 @@ export const VasesNoImg = [
   },
   {
     sku: 454835,
+    category: 'vases',
     name: 'Alura Cream Open Vase',
     price: 5897,
     newArrival: false,
@@ -262,6 +273,7 @@ export const VasesNoImg = [
   },
   {
     sku: 559197,
+    category: 'vases',
     name: 'Percy Teal Ceramic Vase',
     price:  2946,
     newArrival: true,
@@ -287,6 +299,7 @@ export const VasesNoImg = [
   },
   {
     sku: 560140,
+    category: 'vases',
     name: 'Field Geo Pot with Speckles',
     price:  2946,
     newArrival: true,
@@ -312,6 +325,7 @@ export const VasesNoImg = [
   },
   {
     sku: 559005,
+    category: 'vases',
     name: 'Myron Large Speckled Vase',
     price:  4211,
     newArrival: true,
@@ -337,6 +351,7 @@ export const VasesNoImg = [
   },
   {
     sku: 679440,
+    category: 'vases',
     name: 'Alura Short Dark Grey Oval Ceramic Vase',
     price:  7583,
     newArrival: false,
@@ -359,6 +374,7 @@ export const VasesNoImg = [
   },
   {
     sku: 315786,
+    category: 'vases',
     name: 'Hayes Black Marble Wine Cooler',
     price:  3789,
     newArrival: false,

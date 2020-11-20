@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+.suggestions-list {
+  padding-top: 20px;
+  box-shadow: inset 0 1px 0 0 $gray-underline;
+}
+
+.suggestions-list__item {
+  display: flex;
+  justify-content: flex-start;
+
+  margin-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+
+  &:hover {
+    box-shadow: 0 0 1px 1px $gray-underline;
+  }
+}
+
+.suggestions-list__heading {
+  order: 1;
+  align-self: center; 
+
+  @include font(400, 12px, 12px);
+}
+
+.suggestions-list__image {
+  width: 60px;
+
+  margin-right: 6px;
+}

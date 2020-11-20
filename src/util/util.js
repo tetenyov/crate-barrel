@@ -22,4 +22,14 @@ export const getButtonClassName = (active, current) => {
   return active === current 
     ? 'current-item__details-list-button active'
     : 'current-item__details-list-button'
-;}
+};
+
+export const getMatchingGoods = (goods, query) => {
+  return goods && goods.filter(item => {
+    return (
+      item.name.toLowerCase().includes(query.toLowerCase())
+        || item.overview.toLowerCase().includes(query.toLowerCase())
+          || item.details.join('').toLowerCase().includes(query.toLowerCase())
+    )
+  })
+};

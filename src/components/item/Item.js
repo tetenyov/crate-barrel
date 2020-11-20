@@ -15,15 +15,20 @@ function Item() {
     : JSON.parse(localStorage.getItem('goods'))
   
   const { pathname } = useLocation()
+  console.log(pathname)
   const skuInPathname = pathname.match(/\d/g).join('')
   
   let currentItem = goods.find(item => item.sku.toString().includes(skuInPathname))
   currentItem = currentItem // после обновления страницы currentItem undefined, поэтому сохраняем в storage и потом делаем такую проверку
   ? currentItem
   : JSON.parse(localStorage.getItem('currentItem'))
-
+  
   const [imageMain, setImageMain] = useState(currentItem.img[0])
   const getImageMain = (src) => setImageMain(src)
+
+  useEffect(() => {
+    setImageMain(currentItem.img[0])
+  }, [currentItem.img[0]])
 
   useEffect(() => {
     localStorage.setItem('currentItem', JSON.stringify(currentItem))
