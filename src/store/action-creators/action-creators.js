@@ -1,4 +1,4 @@
-import { LOAD_VASES, ADD_TO_CART } from '../../constants/action-types'
+import { LOAD_VASES, ADD_TO_CART, DELETE_FROM_CART } from '../../constants/action-types'
 
 export function loadVases() {
 
@@ -11,6 +11,14 @@ export function addToCart(sku) {
   
   return {
     type: ADD_TO_CART,
+    payload: sku
+  }
+}
+
+export function deleteFromCart(sku) {
+  
+  return {
+    type: DELETE_FROM_CART,
     payload: sku
   }
 }

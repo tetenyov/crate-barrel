@@ -33,3 +33,11 @@ export const getMatchingGoods = (goods, query) => {
     )
   })
 };
+
+export const deleteFirstEqual = (arr, item) => {
+  const index = arr.indexOf(item)
+
+  return index === -1 
+   ? [...arr]
+   : arr.filter((el, i) => i !== index)
+};

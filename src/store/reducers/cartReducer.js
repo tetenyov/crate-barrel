@@ -1,4 +1,5 @@
-import { ADD_TO_CART } from '../../constants/action-types'
+import { ADD_TO_CART, DELETE_FROM_CART } from '../../constants/action-types'
+import { deleteFirstEqual } from '../../util/util'
 
 const initialCartState = {
   inCart: [],
@@ -7,14 +8,22 @@ const initialCartState = {
 
 export default (state=initialCartState, action) => {
   const { type, payload } = action
- 
-  console.log(type)
-  if (type === ADD_TO_CART) {
-     return {
-       ...state,
-       counter: state.counter + 1,
-       inCart: [ ...state.inCart, payload]
-     }
+
+  switch (type) {
+    case ADD_TO_CART: 
+      return {
+        ...state,
+        inCart: [ ...state.inCart, payload],
+        counter: state.counter + 1
+      }
+
+    case DELETE_FROM_CART:
+      return {
+        ...state,
+        inCart: deleteFirstEqual(state.inCart, payload),
+        counter: state.counter === 0 ? 0 : state.counter - 1
+      }
+
+    default: return state
   }
-  return state
 }

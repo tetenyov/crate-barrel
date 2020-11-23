@@ -64,8 +64,20 @@
   @include font(700, 12px, 12px);
   text-transform: uppercase;
   color: #ffffff;
+
   background-color: #000000;
   border: none;
+  cursor: pointer;
+}
+
+.current-item__delete-from-cart {
+  margin-right: 4px;
+  padding: 4px 6px;
+  
+  @include font(400, 10px, 10px);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .current-item__price {

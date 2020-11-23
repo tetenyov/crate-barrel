@@ -6,7 +6,7 @@ import { DetailsContext } from '../../context/DetailsContext'
 
 import PreviewsList from './PreviewsList'
 import ItemDescription from './ItemDescription'
-import ToCartButton from '../cart/ToCartButton'
+import ToCartButton from './ToCartButton'
 
 function Item() {
   let goods = useSelector(state => state.goods.goodsList)
