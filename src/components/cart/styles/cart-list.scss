@@ -1,0 +1,29 @@
+.cart-list__header {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.cart-list__wrapper-header {
+  display: block;
+
+  &--counter {
+    display: flex;
+  }
+}
+
+.cart-list__wrapper-counter {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-list__image-section {
+  display: flex;
+}
+
+.cart-list__wrapper-image {
+  display: flex;
+}
+
+.cart-list__image {
+  width: 150px;
+}

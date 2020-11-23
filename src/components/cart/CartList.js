@@ -1,16 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import CartItem from './CartItem'
 
 function CartList() {
   const goods = JSON.parse(localStorage.getItem('goods'))
-  const inCart = useSelector(state => state.cart.inCart)
+  let inCart = useSelector(state => state.cart.inCart)
+  inCart = inCart.length 
+    ? inCart
+    : JSON.parse(localStorage.getItem('inCart'))
   
+  useEffect(() => {
+    if (inCart.length > 0) {
+      localStorage.setItem('inCart', JSON.stringify(inCart))
+    }
+  }, [inCart])
+
   const goodsInCart = inCart.length
     ? goods.filter(item => inCart.includes(item.sku))
         .map(item => {
-          return <li key={item.sku}><CartItem item={item} /></li>
+          return (
+            <li className='cart-list__item' key={item.sku}>
+              <CartItem item={item} inCart={inCart} />
+            </li>
+          ) 
         })
     : null
 

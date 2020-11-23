@@ -41,3 +41,15 @@ export const deleteFirstEqual = (arr, item) => {
    ? [...arr]
    : arr.filter((el, i) => i !== index)
 };
+
+export const updateItemsInCart = (arr, item, newQty) => {
+  const itemsNewQty = Array.from({length: newQty}, el => item)
+  
+  return arr.filter(el => el !== item).concat(itemsNewQty)
+}
+
+export const getUpdatedCounter = (arr, item, newQty) => {
+  const itemsQty = arr.filter(el => el === item).length
+  
+  return arr.length + (newQty - itemsQty)
+}

@@ -7,11 +7,13 @@ export const goodsList = (store) => (next) => (action) => {
   if (action.type === LOAD_VASES && !goodsInStore) {
      action.payload = vases
      return next(action)
-  } 
-
-  if (action.type === ADD_TO_CART || action.type === DELETE_FROM_CART) {
+  } else {
     return next(action)
-  } 
+  }
+
+  // if (action.type !== LOAD_VASES) {
+  //   return next(action)
+  // } 
 
   return next
 }
