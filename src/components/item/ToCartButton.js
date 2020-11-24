@@ -1,15 +1,15 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { addToCart, deleteFromCart } from '../../store/action-creators/action-creators'
+import { incrQuantity, decrQuantity } from '../../store/action-creators/action-creators'
 import { getCounter } from '../../util/util'
 
 function ToCartButton(props) {
   const inCart = useSelector(state => state.cart.inCart)
   const dispatch = useDispatch()
 
-  const buttonAddClickHandler = () => dispatch(addToCart(props.sku))
-  const buttonDeleteClickHandler = () => dispatch(deleteFromCart(props.sku))
+  const buttonAddClickHandler = () => dispatch(incrQuantity(props.sku))
+  const buttonDeleteClickHandler = () => dispatch(decrQuantity(props.sku))
 
   return (
     <p>

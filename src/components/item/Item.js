@@ -10,7 +10,7 @@ import ToCartButton from './ToCartButton'
 
 function Item() {
   let goods = useSelector(state => state.goods.goodsList)
-  goods = goods.length // после обновления страницы goods пуст, поэтому такую проверку и если товаров нет, берем их из storage
+  goods = goods && goods.length // после обновления страницы goods пуст, поэтому такую проверку и если товаров нет, берем их из storage
     ? goods
     : JSON.parse(localStorage.getItem('goods'))
   

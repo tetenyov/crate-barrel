@@ -9,7 +9,7 @@ function CartList() {
   inCart = inCart.length 
     ? inCart
     : JSON.parse(localStorage.getItem('inCart'))
-  
+    console.log(inCart)
   useEffect(() => {
     if (inCart.length > 0) {
       localStorage.setItem('inCart', JSON.stringify(inCart))

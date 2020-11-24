@@ -34,14 +34,14 @@ function CartItem(props) {
           </p>
           <p>Rub { item.price }</p>
         </div>
-        <p>Rub { getTotalItemPrice(item.price, inCart.length) }</p>
+        <p>Rub { getTotalItemPrice(item.price, getCounter(item.sku, inCart)) }</p>
       </header>
       <section className='cart-list__image-section'>
         <div className='cart-list__wrapper-image'>
           <img className='cart-list__image' src={item.img[0]} />
           <p>{ item.ship }</p>
         </div>
-        <ButtonRemove />
+        <ButtonRemove sku={item.sku}/>
       </section>
     </article>
   )

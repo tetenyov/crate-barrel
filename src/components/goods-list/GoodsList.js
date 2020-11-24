@@ -5,8 +5,9 @@ import ListItem from './ListItem'
 
 function GoodsList() {
   let goods = useSelector(state => state.goods.goodsList)
-  
-  goods = goods.length
+  console.log(goods)
+  console.log(JSON.parse(localStorage.getItem('goods')))
+  goods = goods && goods.length
   ? goods
   : JSON.parse(localStorage.getItem('goods'))
 

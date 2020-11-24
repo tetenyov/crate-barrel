@@ -1,4 +1,4 @@
-import { LOAD_VASES, ADD_TO_CART, DELETE_FROM_CART, UPDATE_QUANTITY } from '../../constants/action-types'
+import { LOAD_VASES, INCREMENT_QUANTITY, DECREMENT_QUANTITY, UPDATE_QUANTITY, DELETE_FROM_CART } from '../../constants/action-types'
 
 export function loadVases() {
 
@@ -7,18 +7,18 @@ export function loadVases() {
   }
 }
 
-export function addToCart(sku) {
+export function incrQuantity(sku) {
   
   return {
-    type: ADD_TO_CART,
+    type: INCREMENT_QUANTITY,
     payload: sku
   }
 }
 
-export function deleteFromCart(sku) {
+export function decrQuantity(sku) {
   
   return {
-    type: DELETE_FROM_CART,
+    type: DECREMENT_QUANTITY,
     payload: sku
   }
 }
@@ -29,5 +29,13 @@ export function updateQuantity(sku, qty) {
     type: UPDATE_QUANTITY,
     payload: sku,
     quantity: qty
+  }
+}
+
+export function deleteFromCart(sku) {
+  
+  return {
+    type: DELETE_FROM_CART,
+    payload: sku,
   }
 }
