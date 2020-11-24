@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -6,8 +6,18 @@ import { getMatchingGoods } from '../../util/util'
 import { MIN_QUERY_LENGTH } from '../../constants/constants'
 
 function Suggestions(props) {
-  const goods = useSelector(state => state.goods.goodsList)
+  let goods = useSelector(state => state.goods.goodsList)
+    goods = goods 
+      ? goods
+      : JSON.parse(localStorage.getItem('goods'))
+
   const matchedGoodsList = getMatchingGoods(goods, props.query)
+
+  useEffect(() => {
+    if (!localStorage.goods) {
+      localStorage.setItem('goods', JSON.stringify(goods))
+    }
+  }, [goods])
 
   const suggestionsList = matchedGoodsList 
     && matchedGoodsList.map(item => {
@@ -24,7 +34,7 @@ function Suggestions(props) {
   return (
     <Fragment>
       {
-        props.query.length > MIN_QUERY_LENGTH
+        !!matchedGoodsList.length
           && (
             <section className='suggestions'>
               <h3 className='suggestions__heading'>

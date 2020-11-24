@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { incrQuantity, decrQuantity } from '../../store/action-creators/action-creators'
@@ -8,8 +8,18 @@ function ToCartButton(props) {
   const inCart = useSelector(state => state.cart.inCart)
   const dispatch = useDispatch()
 
-  const buttonAddClickHandler = () => dispatch(incrQuantity(props.sku))
-  const buttonDeleteClickHandler = () => dispatch(decrQuantity(props.sku))
+  const buttonAddClickHandler = () => {
+    // localStorage[`${props.sku}InCart`] = (+localStorage[`${props.sku}InCart`] + 1).toString()
+    dispatch(incrQuantity(props.sku))
+  } 
+
+  const buttonDeleteClickHandler = () => {
+    dispatch(decrQuantity(props.sku))
+  }
+
+  // useEffect(() => {
+  //   localStorage.setItem(`${props.sku}InCart`, '') 
+  // }, [])
 
   return (
     <p>
@@ -19,7 +29,9 @@ function ToCartButton(props) {
       >
         delete
       </button>
-      <span className='current-item__counter'>{ getCounter(props.sku, inCart) }</span>
+      <span className='current-item__counter'>
+        { getCounter(props.sku, inCart) }
+      </span>
       <button 
         className='current-item__to-cart' type='button'
         onClick={buttonAddClickHandler}
