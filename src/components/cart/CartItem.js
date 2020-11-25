@@ -23,7 +23,7 @@ function CartItem(props) {
         </div>
         <div className='cart-list__wrapper-header cart-list__wrapper-header--counter'>
           <p className='cart-list__wrapper-counter'>
-            <input type='number' defaultValue={getCounter(item.sku, inCart)}
+            <input type='text' defaultValue={getCounter(item.sku, inCart)}
               onChange={inputQtyChangeHandler}
             />
             <button type='button'
@@ -34,12 +34,14 @@ function CartItem(props) {
           </p>
           <p>Rub { item.price }</p>
         </div>
-        <p>Rub { getTotalItemPrice(item.price, getCounter(item.sku, inCart)) }</p>
+        <p className='cart-list__header-total-price'>
+          Rub { getTotalItemPrice(item.price, getCounter(item.sku, inCart)) }
+        </p>
       </header>
       <section className='cart-list__image-section'>
         <div className='cart-list__wrapper-image'>
           <img className='cart-list__image' src={item.img[0]} />
-          <p>{ item.ship }</p>
+          <p className='cart-list__image-ship'>{ item.ship }</p>
         </div>
         <ButtonRemove sku={item.sku}/>
       </section>

@@ -4,14 +4,15 @@
 
   width: 85%;
   margin: 0 auto;
+  padding-top: 20px;
 }
 
 .cart__wrapper {
-  outline: 1px solid red;
   flex-grow: 1;
   margin-right: 24px;
 }
 
 .cart__heading {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  @include font(400, 26px, 34px);
 }
