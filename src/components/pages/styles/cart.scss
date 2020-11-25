@@ -1,0 +1,17 @@
+.cart{
+  display: flex;
+  justify-content: space-between;
+
+  width: 85%;
+  margin: 0 auto;
+}
+
+.cart__wrapper {
+  outline: 1px solid red;
+  flex-grow: 1;
+  margin-right: 24px;
+}
+
+.cart__heading {
+  margin-bottom: 30px;
+}

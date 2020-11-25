@@ -16,11 +16,14 @@ function ButtonRemove(props) {
   } 
 
   return (
-    <button type='button'
-      onClick={buttonDeleteClickHandler}
-    >
-      Remove
-    </button>
+    <div className='cart-list__wrapper-remove'>
+      <button className='cart-list__remove-button' type='button'
+        onClick={buttonDeleteClickHandler}
+      >
+        Remove
+      </button>
+    </div>
+
   )
 }
 
