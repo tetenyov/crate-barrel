@@ -8,15 +8,18 @@ function ListItem(props) {
   return (
     <Fragment>
       <NavLink to={`${pathname}/s${item.sku}`}>
-          <img src={item.img[0]}/>
+          <img className='goods-list__image' src={item.img[0]}/>
       </NavLink>
-    
       {
         item.newArrival 
-          && <p>New Arrival</p>
+          && <p className='goods-list__new'>New Arrival</p>
       }
-      <h3>{ item.name }</h3>
-      <p>{`Rub ${item.price}`}</p>
+      <NavLink to={`${pathname}/s${item.sku}`}>
+        <h3 className='goods-list__heading'>{ item.name }</h3>
+      </NavLink>
+      <p className='goods-list__price'>
+        {`Rub ${item.price.toLocaleString()}`}
+      </p>
     </Fragment>
   )
 }

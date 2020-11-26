@@ -1,7 +1,6 @@
 @import '../../styles/variables.scss';
 
 .goods-list {
-  outline: 2px solid green;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -11,13 +10,48 @@
 }
 
 .goods-list__item {
-  outline: 1px solid black;
   width: 24.5%;
   margin-bottom: 0.7%;
+  padding-bottom: 20px;
+}
+
+.goods-list__image {
+  margin-bottom: 8px;
+  border-radius: 3px;
+
+  &:hover {
+    transform: scale(1.015);
+    box-shadow: 0 0 3px 0 lighten(#000000, 60%);
+  }
 }
 
 .goods-list__item:not(:nth-child(4n)) {
   margin-right: 0.5%;
+}
+
+.goods-list__new {
+  margin-bottom: 4px;
+  padding-left: 8px;
+
+  @include font(400, 12px, 12px);
+}
+
+.goods-list__heading {
+  margin-bottom: 12px;
+  padding-left: 8px;
+
+  @include font(400, 16px, 20px);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.goods-list__price {
+  padding-left: 8px;
+  
+  @include font(700, 16px, 16px);
+  text-transform: uppercase;
 }
 
 @media (max-width: $width-desktop) {
