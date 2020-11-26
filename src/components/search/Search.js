@@ -35,7 +35,7 @@ function Search() {
 
   return (
     <form className='search-form'>
-      <input className='search-form__input' type='text' 
+      <input className='search-form__input' type='text' placeholder='Search'
         value={query}
         onFocus={inputFocusHandler}
         onChange={inputChangeHandler}

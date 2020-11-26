@@ -15,7 +15,7 @@
 
   width: 70%;
   min-width: 500px;
-  margin-right: 40px;
+  margin-right: 3%;
   margin-bottom: auto;
 }
 
@@ -33,4 +33,10 @@
   margin-bottom: 26px;
 
   @include font(400, 12px, 16px);
+}
+
+@media(max-width: $width-desktop) {
+  .home-page__heading-main {
+    @include font(700, 40px, 40px);
+  }
 }
