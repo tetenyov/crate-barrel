@@ -1,5 +1,5 @@
 .navigation {
-  padding: 0 60px 18px 60px;
+  padding: 0 60px 12px 60px;
 }
 
 .navigation__list {
@@ -10,6 +10,14 @@
   padding: 0;
 
   list-style: none;
+}
+
+.navigation__item{
+  padding-bottom: 4px;
+
+  &:hover {
+    box-shadow: 0 2px 0 0 #000000;
+  }
 }
 
 .navigation__item a {

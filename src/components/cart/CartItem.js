@@ -18,7 +18,7 @@ function CartItem(props) {
     <article className='cart-list__goods-item'>
       <header className='cart-list__header'>
         <div className='cart-list__wrapper-header'>
-          <h3>{ item.name }</h3>
+          <h3 className='cart-list__heading'>{ item.name }</h3>
           <p>Sku { item.sku }</p>
         </div>
         <div className='cart-list__wrapper-header cart-list__wrapper-header--counter'>
@@ -32,7 +32,7 @@ function CartItem(props) {
               Update
             </button>
           </p>
-          <p>Rub { item.price }</p>
+          <p>Rub { item.price.toLocaleString() }</p>
         </div>
         <p className='cart-list__header-total-price'>
           Rub { getTotalItemPrice(item.price, getCounter(item.sku, inCart)) }
