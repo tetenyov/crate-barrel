@@ -24,6 +24,12 @@ export const getButtonClassName = (active, current) => {
     : 'current-item__details-list-button'
 };
 
+export const getPreviewClassName = (currentImage, src) => {
+  return currentImage.includes(src)
+    ? 'previews-list__item previews-list__item--active'
+    : 'previews-list__item'
+};
+
 export const getMatchingGoods = (goods, query) => {
   return goods && goods.filter(item => {
     return (

@@ -58,9 +58,10 @@ function Item() {
       <div className='current-item__wrapper-lower'>
         <section className='current-item__images'>
           <h4 className='visually-hidden'>Images of the item</h4>
-          <img src={imageMain} />
+          <img className='current-item__image-main' src={imageMain} />
           <PreviewsList 
             getImageMain={getImageMain}
+            imageMain={imageMain}
             images={currentItem.img}
           />
         </section>

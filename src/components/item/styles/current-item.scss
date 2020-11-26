@@ -1,19 +1,20 @@
 @import '../../../styles/variables.scss';
 
 .current-item {
-  width: $width-current-item;
+  min-width: $width-min-current-item;
+  width: 80%;
+  max-width: $width-max-current-item;
   margin: 0 auto;
   padding-top: 40px;
-  // background: gray;
 }
 
 .current-item__wrapper-upper {
   display: flex;
   justify-content: space-between;
-  width: $width-current-item;
+
+  width: 100%;
   margin: 0 auto;
   padding-bottom: 8px;
-  // background: gray;
 }
 
 .current-item__wrapper-lower {
@@ -28,6 +29,10 @@
 
 .current-item__images {
   width: 60%;
+}
+
+.current-item__image-main {
+  margin-bottom: 4px;
 }
 
 .current-item__heading {

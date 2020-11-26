@@ -1,7 +1,27 @@
 .previews-list {
   display: flex;
+  justify-content: center;
+
+  padding-bottom: 10px;
 }
 
 .previews-list__item {
   width: 15%;
+  padding-bottom: 4px;
+
+  &:hover {
+    box-shadow: 0 3px 0 0 #000000;
+  }
+
+  &--active {
+    box-shadow: 0 1.5px 0 0 #000000;
+  }
+}
+
+.previews-list__item:not(:last-child) {
+  margin-right: 3px;
+}
+
+.previews-list__image {
+  border-radius: 3px;
 }

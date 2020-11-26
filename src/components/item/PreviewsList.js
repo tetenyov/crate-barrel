@@ -1,19 +1,28 @@
 import React from 'react'
 
-function PreviewsList(props) {
-  const { getImageMain, images } = props
-  
-  const imageClickHandler = (evt) => getImageMain(evt.target.src)
+import { getPreviewClassName } from '../../util/util'
 
-  const previews = images.length && images.map((src, i) => (
-    <li 
-      className='previews-list__item' 
-      key={i}
-      onClick={imageClickHandler}
-    >
-      <img src={src} />
-    </li>
-  ))
+function PreviewsList(props) {
+  const { imageMain, getImageMain, images } = props
+  
+  const imageClickHandler = (evt) => {
+    console.log(imageMain)
+    getImageMain(evt.target.src)
+  }
+
+  const previews = images.length && images.map((src, i) => {
+    console.log(src)
+    return (
+      <li 
+        className={getPreviewClassName(imageMain, src)} 
+        key={i}
+        onClick={imageClickHandler}
+      >
+        <img className='previews-list__image' src={src} />
+      </li>
+    )
+  })
+
   return (
     <ul className='previews-list'>
       { previews }
