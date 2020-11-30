@@ -6,9 +6,6 @@
 }
 
 .suggestions-list__item {
-  display: flex;
-  justify-content: flex-start;
-
   margin-bottom: 4px;
   padding-left: 12px;
   padding-right: 12px;
@@ -16,6 +13,15 @@
   &:hover {
     box-shadow: 0 0 1px 1px $gray-underline;
   }
+
+  &:hover > a {
+    text-decoration: underline;
+  }
+}
+
+.suggestions-list__link {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .suggestions-list__heading {

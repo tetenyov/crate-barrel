@@ -23,7 +23,7 @@ function Suggestions(props) {
     && matchedGoodsList.map(item => {
       return (
         <li className='suggestions-list__item' key={item.sku.toString()}>
-          <NavLink to={`/${item.category}/s${item.sku}`}>
+          <NavLink className='suggestions-list__link' to={`/${item.category}/s${item.sku}`}>
             <h4 className='suggestions-list__heading'>{item.name}</h4>
             <img className='suggestions-list__image' src={item.img[0]} />
           </NavLink>
