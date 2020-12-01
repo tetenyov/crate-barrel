@@ -8,36 +8,31 @@ const initialCartState = {
 }
 
 export default (state=initialCartState, action) => {
-  const { type, payload, quantity } = action
+  const { type, payload } = action
 
   switch (type) {
     case INCREMENT_QUANTITY: 
       return {
         ...state,
-        inCart: payload,
-        
+        inCart: payload
       }
 
     case DECREMENT_QUANTITY:
       return {
         ...state,
-        inCart: payload,
-        // inCart: deleteFirstEqual(state.inCart, payload),
-        // counter: state.counter === 0 ? 0 : state.counter - 1
+        inCart: payload
       }
      
     case UPDATE_QUANTITY:
       return {
         ...state,
-        inCart: updateItemsInCart(state.inCart, payload, quantity),
-        // counter: getUpdatedCounter(state.inCart, payload, quantity)
+        inCart: payload
       }
 
     case DELETE_FROM_CART:
       return {
         ...state,
-        inCart: updateItemsInCart(state.inCart, payload, 0),
-        // counter: getUpdatedCounter(state.inCart, payload, 0)
+        inCart: payload
       }
     
     default: return state

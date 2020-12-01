@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { updateQuantity } from '../../store/action-creators/action-creators'
@@ -6,13 +6,17 @@ import ButtonRemove from './ButtonRemove'
 import { getCounter } from '../../util/util'
 
 function CartItem(props) {
-  const [newQty, setNewQty] = useState(null)
+  const [quantity, setQuantity] = useState(null)
   const dispatch = useDispatch()
   const { item, inCart } = props
 
   const getTotalItemPrice = (price, qty) => (price * qty).toLocaleString()
-  const buttonUpdateClickHandler = () => dispatch(updateQuantity(item.sku, newQty))
-  const inputQtyChangeHandler = (evt) => setNewQty(evt.target.value)
+  const inputQtyChangeHandler = (evt) => setQuantity(evt.target.value)
+  const buttonUpdateClickHandler = () => dispatch(updateQuantity(item.sku, quantity))
+
+  useEffect(() => {
+    setQuantity(getCounter(item.sku, inCart))
+  }, [getCounter(item.sku, inCart)])
 
   return (
     <article className='cart-list__goods-item'>

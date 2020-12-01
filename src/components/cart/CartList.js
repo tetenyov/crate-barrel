@@ -16,7 +16,7 @@ function CartList() {
     }
   }, [inCart])
 
-  const goodsInCart = inCart.length
+  const goodsInCart = inCart
     ? goods.filter(item => inCart.includes(item.sku))
         .map(item => {
           return (

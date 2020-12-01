@@ -6,9 +6,13 @@ const initialGoodsState = {
 
 export default (state = initialGoodsState, action) => {
   const { type, payload } = action
+  console.log('in reducer ' + payload)
   
   if (type === LOAD_VASES) {
-    return {...state, goodsList: state.goodsList.concat(payload)}
+    return {
+      ...state, 
+      goodsList: payload ? state.goodsList.concat(payload) : state.goodsList
+    }
   }
 
   return state
