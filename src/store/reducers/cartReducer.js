@@ -21,7 +21,8 @@ export default (state=initialCartState, action) => {
     case DECREMENT_QUANTITY:
       return {
         ...state,
-        inCart: deleteFirstEqual(state.inCart, payload),
+        inCart: payload,
+        // inCart: deleteFirstEqual(state.inCart, payload),
         // counter: state.counter === 0 ? 0 : state.counter - 1
       }
      
