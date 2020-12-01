@@ -1,7 +1,7 @@
 import { LOAD_VASES, INCREMENT_QUANTITY, DECREMENT_QUANTITY, UPDATE_QUANTITY, DELETE_FROM_CART } from '../../constants/action-types'
 
 export function loadVases() {
-
+  console.log('---')
   return {
     type: LOAD_VASES,
   }

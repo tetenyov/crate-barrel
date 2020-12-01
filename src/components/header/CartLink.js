@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
 import cartSVG from '../../icons/Icons.svg'
 
 function CartLink() {
-  const cartCounter = useSelector(state => state.cart.counter)
+  let cartCounter = useSelector(state => state.cart.counter)
+  cartCounter = cartCounter
+    ? cartCounter
+    : JSON.parse(localStorage.getItem('cartCounter'))
+  
+  // console.log(!localStorage.getItem('cartCounter'))  
+  // console.log(localStorage.getItem('cartCounter'))  
+
+  // useEffect(() => {
+  //   // if (!localStorage.getItem('cartCounter')) {
+  //     localStorage.setItem('cartCounter', JSON.stringify(cartCounter))
+  //   // }
+  // }, [cartCounter])
 
   return (
     <NavLink className='page-header__cart-link' to='/checkout/cart' >

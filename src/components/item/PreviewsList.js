@@ -6,12 +6,11 @@ function PreviewsList(props) {
   const { imageMain, getImageMain, images } = props
   
   const imageClickHandler = (evt) => {
-    console.log(imageMain)
     getImageMain(evt.target.src)
   }
 
   const previews = images.length && images.map((src, i) => {
-    console.log(src)
+
     return (
       <li 
         className={getPreviewClassName(imageMain, src)} 

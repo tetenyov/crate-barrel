@@ -8,7 +8,7 @@ export default (state = initialGoodsState, action) => {
   const { type, payload } = action
   
   if (type === LOAD_VASES) {
-    return {...state, goodsList: payload}
+    return {...state, goodsList: state.goodsList.concat(payload)}
   }
 
   return state

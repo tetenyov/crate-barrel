@@ -5,7 +5,11 @@ import { incrQuantity, decrQuantity } from '../../store/action-creators/action-c
 import { getCounter } from '../../util/util'
 
 function ToCartButton(props) {
-  const inCart = useSelector(state => state.cart.inCart)
+  let inCart = useSelector(state => state.cart.inCart)
+  inCart = inCart.length
+    ? inCart
+    : JSON.parse(localStorage.getItem('inCart'))
+
   const dispatch = useDispatch()
 
   const buttonAddClickHandler = () => {
@@ -14,6 +18,7 @@ function ToCartButton(props) {
   } 
 
   const buttonDeleteClickHandler = () => {
+    if (!inCart.length) return 
     dispatch(decrQuantity(props.sku))
   }
 

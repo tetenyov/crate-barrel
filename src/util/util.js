@@ -10,10 +10,10 @@ export const getGoodsWithImg = (category) => {
   )
 };
 
-export const getCounter = (item, array) => {
-  return array.reduce((acc, curr) => {
-    return curr === item ? acc + 1 : acc
-  }, 0)
+export const getCounter = (item, arrayOfItems) => {
+  if (!arrayOfItems || !arrayOfItems.includes(item)) return 0
+
+  return arrayOfItems.reduce((acc, curr) => curr === item ? acc + 1 : acc, 0)
 };
 
 export const getFirstLetterCaps = (str) => str[0].toUpperCase() + str.slice(1);

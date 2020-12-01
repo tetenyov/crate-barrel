@@ -4,7 +4,7 @@ import { deleteFirstEqual, updateItemsInCart, getUpdatedCounter } from '../../ut
 
 const initialCartState = {
   inCart: [],
-  counter: 0
+
 }
 
 export default (state=initialCartState, action) => {
@@ -14,29 +14,29 @@ export default (state=initialCartState, action) => {
     case INCREMENT_QUANTITY: 
       return {
         ...state,
-        inCart: [ ...state.inCart, payload],
-        counter: state.counter + 1
+        inCart: payload,
+        
       }
 
     case DECREMENT_QUANTITY:
       return {
         ...state,
         inCart: deleteFirstEqual(state.inCart, payload),
-        counter: state.counter === 0 ? 0 : state.counter - 1
+        // counter: state.counter === 0 ? 0 : state.counter - 1
       }
      
     case UPDATE_QUANTITY:
       return {
         ...state,
         inCart: updateItemsInCart(state.inCart, payload, quantity),
-        counter: getUpdatedCounter(state.inCart, payload, quantity)
+        // counter: getUpdatedCounter(state.inCart, payload, quantity)
       }
 
     case DELETE_FROM_CART:
       return {
         ...state,
         inCart: updateItemsInCart(state.inCart, payload, 0),
-        counter: getUpdatedCounter(state.inCart, payload, 0)
+        // counter: getUpdatedCounter(state.inCart, payload, 0)
       }
     
     default: return state
