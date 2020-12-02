@@ -3,7 +3,7 @@
 ### Online store of furniture and home decor
 Inspired by https://www.crateandbarrel.com/
 
-### Реализованный функционал:
+### Feature set:
 
 * Displaying of goods of chosen category (currently only Vases)
 * Search by names and descriptions of items (best query would be "vase")
