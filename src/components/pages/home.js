@@ -6,7 +6,7 @@ function Home() {
 
   return (
     <section className='home-page'>
-      <img className='home-page__promo-image' src='/img/internationalHero_v4.webp' />
+      <img className='home-page__promo-image' src='/img/internationalHero_v4.webp' alt='Beige dishes on the table'/>
       <div className='home-page__wrapper'>
         <h2 className='home-page__heading-main'>Welcome, International Customer</h2>
         <p className='home-page__text'>Click on&nbsp;a&nbsp;category above to&nbsp;start shopping.</p>
