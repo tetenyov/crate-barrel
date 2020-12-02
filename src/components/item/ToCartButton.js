@@ -11,21 +11,13 @@ function ToCartButton(props) {
     : JSON.parse(localStorage.getItem('inCart'))
 
   const dispatch = useDispatch()
-
-  const buttonAddClickHandler = () => {
-    // localStorage[`${props.sku}InCart`] = (+localStorage[`${props.sku}InCart`] + 1).toString()
-    dispatch(incrQuantity(props.sku))
-  } 
+  const buttonAddClickHandler = () => dispatch(incrQuantity(props.sku))
 
   const buttonDeleteClickHandler = () => {
     if (!inCart.length) return 
     dispatch(decrQuantity(props.sku))
   }
-
-  // useEffect(() => {
-  //   localStorage.setItem(`${props.sku}InCart`, '') 
-  // }, [])
-
+  
   return (
     <p>
       <button 

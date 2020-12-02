@@ -2,7 +2,7 @@ import React from 'react'
 
 import Advantages from '../advantages/Advantages'
 
-function home() {
+function Home() {
 
   return (
     <section className='home-page'>
@@ -16,4 +16,4 @@ function home() {
   )
 }
 
-export default home
+export default Home

@@ -8,14 +8,15 @@
 
 .summary__heading {
   margin-bottom: 30px;
+
   @include font(400, 16px, 16px);
 }
 
 .summary__wrapper {
   display: flex;
   justify-content: space-between;
-
   margin-bottom: 30px;
+
   @include font(700, 14px, 14px);
 
   & p:last-child {

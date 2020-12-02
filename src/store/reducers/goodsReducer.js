@@ -6,7 +6,6 @@ const initialGoodsState = {
 
 export default (state = initialGoodsState, action) => {
   const { type, payload } = action
-  console.log('in reducer ' + payload)
   
   if (type === LOAD_VASES) {
     return {

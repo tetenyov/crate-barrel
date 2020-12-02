@@ -5,12 +5,9 @@ import { getPreviewClassName } from '../../util/util'
 function PreviewsList(props) {
   const { imageMain, getImageMain, images } = props
   
-  const imageClickHandler = (evt) => {
-    getImageMain(evt.target.src)
-  }
+  const imageClickHandler = (evt) => getImageMain(evt.target.src)
 
   const previews = images.length && images.map((src, i) => {
-
     return (
       <li 
         className={getPreviewClassName(imageMain, src)} 

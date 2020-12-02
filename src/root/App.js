@@ -1,9 +1,9 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import home from '../components/pages/home'
-import vases from '../components/pages/vases'
-import cart from '../components/pages/cart'
+import Home from '../components/pages/home'
+import Vases from '../components/pages/vases'
+import Cart from '../components/pages/cart'
 import Header from '../components/header/Header'
 import Footer from '../components/footer/Footer'
 
@@ -17,9 +17,9 @@ function App() {
       <Header />
       <Switch>
         <Route path='/vases/:sku' component={Item}/>
-        <Route path='/checkout/cart' component={cart}/>
-        <Route exact path='/vases' component={vases}/>
-        <Route exact path='/' component={home}/>
+        <Route path='/checkout/cart' component={Cart}/>
+        <Route exact path='/vases' component={Vases}/>
+        <Route exact path='/' component={Home}/>
       </Switch>
       <Footer />
     </div>

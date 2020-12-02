@@ -24,7 +24,7 @@ function ItemDescription() {
     <div>
       <ul className='current-item__details-list'>
         <li>
-          <h5 >
+          <h5>
             <button className={getButtonClassName(displayed, 'Overview')} type='button'
               onClick={buttonClickHandler}
             >

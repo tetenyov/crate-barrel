@@ -8,7 +8,7 @@ function ListItem(props) {
   return (
     <Fragment>
       <NavLink to={`${pathname}/s${item.sku}`}>
-          <img className='goods-list__image' src={item.img[0]}/>
+        <img className='goods-list__image' src={item.img[0]}/>
       </NavLink>
       {
         item.newArrival 

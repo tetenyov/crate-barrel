@@ -1,40 +1,28 @@
-import { INCREMENT_QUANTITY, DECREMENT_QUANTITY, UPDATE_QUANTITY, DELETE_FROM_CART } from '../../constants/action-types'
-
-import { deleteFirstEqual, updateItemsInCart, getUpdatedCounter } from '../../util/util'
+import { INCREMENT_QUANTITY,
+  DECREMENT_QUANTITY, 
+  UPDATE_QUANTITY, 
+  DELETE_FROM_CART, 
+  UPDATE_TOTAL_ORDER 
+} from '../../constants/action-types'
 
 const initialCartState = {
-  inCart: [],
-
+  inCart: []
 }
 
 export default (state=initialCartState, action) => {
   const { type, payload } = action
-
-  switch (type) {
-    case INCREMENT_QUANTITY: 
-      return {
-        ...state,
-        inCart: payload
-      }
-
-    case DECREMENT_QUANTITY:
-      return {
-        ...state,
-        inCart: payload
-      }
-     
-    case UPDATE_QUANTITY:
-      return {
-        ...state,
-        inCart: payload
-      }
-
-    case DELETE_FROM_CART:
-      return {
-        ...state,
-        inCart: payload
-      }
-    
-    default: return state
+ 
+  if (type === INCREMENT_QUANTITY
+      || type === DECREMENT_QUANTITY
+      || type === UPDATE_QUANTITY
+      || type === DELETE_FROM_CART
+      || type === UPDATE_TOTAL_ORDER
+  ) {
+    return {
+      ...state,
+      inCart: payload
+    }
   }
+  
+  return state
 }

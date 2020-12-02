@@ -40,22 +40,13 @@ export const getMatchingGoods = (goods, query) => {
   })
 };
 
-export const deleteFirstEqual = (arr, item) => {
-  const index = arr.indexOf(item)
+export const getOrderTotal = (allGoods, inCart) => {
+  if (!allGoods || !inCart) return 0
 
-  return index === -1 
-   ? [...arr]
-   : arr.filter((el, i) => i !== index)
-};
+  return inCart.reduce((acc, curr) => {
+    const item = allGoods.find(good => good.sku === curr)
+    const price = item.price
 
-export const updateItemsInCart = (arr, item, newQty) => {
-  const itemsNewQty = Array.from({length: newQty}, el => item)
-  
-  return arr.filter(el => el !== item).concat(itemsNewQty)
-}
-
-export const getUpdatedCounter = (arr, item, newQty) => {
-  const itemsQty = arr.filter(el => el === item).length
-  
-  return arr.length + (newQty - itemsQty)
+    return acc + price
+  }, 0).toLocaleString()
 }

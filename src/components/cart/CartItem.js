@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { updateQuantity } from '../../store/action-creators/action-creators'
-import ButtonRemove from './ButtonRemove'
 import { getCounter } from '../../util/util'
+import ButtonRemove from './ButtonRemove'
 
 function CartItem(props) {
   const [quantity, setQuantity] = useState(null)

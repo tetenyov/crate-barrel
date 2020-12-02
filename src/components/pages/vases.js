@@ -2,7 +2,7 @@ import React from 'react'
 
 import GoodsList from '../goods-list/GoodsList'
 
-function vases() {
+function Vases() {
   return (
     <section className='vases-page'>
       <h2 className='vases-page__heading'>Vases</h2>
@@ -11,4 +11,4 @@ function vases() {
   )
 }
 
-export default vases
+export default Vases

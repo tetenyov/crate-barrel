@@ -40,8 +40,7 @@ function Search() {
         onFocus={inputFocusHandler}
         onChange={inputChangeHandler}
       /> 
-      { 
-        (suggestionsOpen && query.length > 2) 
+      { (suggestionsOpen && query.length > 2) 
           && <Suggestions query={query}/> 
       }
     </form>
